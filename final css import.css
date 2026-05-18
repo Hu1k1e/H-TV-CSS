@@ -1228,8 +1228,16 @@ progress::-webkit-progress-value {
 }
 
 .force-scroll {
-    overflow-y: auto;
-    overflow-x: auto;
+    overflow-y: visible !important; /* FIXED: Allows sticky to work and stops scroll trapping */
+    overflow-x: auto !important;    /* Keeps horizontal scrolling working for cast/seasons */
+}
+
+/* Add this safety net to ensure no other Jellyfin defaults trap the media bar */
+.detailPagePrimaryContainer, 
+.detailPageContent, 
+.detailPageWrapperContainer {
+    overflow: visible !important;
+    contain: none !important; /* CSS 'contain' also breaks sticky, this kills it */
 }
 
 /*Glow accent on hover*/
