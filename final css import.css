@@ -1211,7 +1211,7 @@ progress::-webkit-progress-value {
   #musicRecommendedPage {
     margin-top: 68px;
     padding-top: 0px !important;
-    overflow-y: scroll;
+    overflow-y: visible !important; /* Changed from scroll to visible */
   }
 }
 
